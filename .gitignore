@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+scripts/manifest.json
+
+# Local previews
+*.tmp
+
+# Raw originals — kept locally for re-processing, not shipped to web
+raw/
