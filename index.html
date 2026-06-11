@@ -1,976 +1,514 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Elia Voss® — UX/UI Designer & Creative Developer</title>
-  <meta name="description" content="Elia Voss is a UX/UI designer and creative developer crafting award-winning digital products, interfaces and interactive experiences. A fictional portfolio concept built with GSAP and Three.js.">
-  <link rel="canonical" href="https://wattsonworks.github.io/labuffet/">
-  <meta name="theme-color" content="#0a0a0c">
-  <meta property="og:title" content="Elia Voss® — UX/UI Designer & Creative Developer">
-  <meta property="og:description" content="Designing digital products that feel inevitable. Interfaces, motion, WebGL.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wattsonworks.github.io/labuffet/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0c'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-weight='800' font-size='52' fill='%23d6f54d' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#1f6a7c" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>לה בופה · ארוחת הבוקר של The Way Inn, צפת</title>
+  <meta name="description" content="לה בופה — ארוחת בוקר ים-תיכונית נדיבה, לחמים שנאפו בבית ושולחן סלטים שופע, מוגשת לאורחי מלון The Way Inn ברובע האמנים בצפת, מדי בוקר 08:00–10:30." />
 
-  <style>
-    :root{
-      --bg: #0a0a0c;
-      --bg-2: #101014;
-      --ink: #f2efe9;
-      --ink-dim: rgba(242,239,233,.55);
-      --ink-faint: rgba(242,239,233,.22);
-      --line: rgba(242,239,233,.12);
-      --acid: #d6f54d;
-      --violet: #7c5cff;
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'Space Grotesk', sans-serif;
-      --pad: clamp(20px, 4vw, 64px);
-    }
-    *{ margin:0; padding:0; box-sizing:border-box; }
-    html{ scroll-behavior:auto; }
-    html.lenis, html.lenis body{ height:auto; }
-    .lenis.lenis-smooth{ scroll-behavior:auto !important; }
-    body{
-      background:var(--bg);
-      color:var(--ink);
-      font-family:var(--font-body);
-      font-weight:300;
-      line-height:1.5;
-      overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-    }
-    ::selection{ background:var(--acid); color:#0a0a0c; }
-    a{ color:inherit; text-decoration:none; }
-    button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
-    .u-label{
-      font-size:11px; letter-spacing:.22em; text-transform:uppercase;
-      color:var(--ink-dim); font-weight:400;
-    }
+  <link rel="canonical" href="https://wattsonworks.github.io/labuffet/" />
+  <link rel="alternate" hreflang="he" href="https://wattsonworks.github.io/labuffet/" />
+  <link rel="alternate" hreflang="en" href="https://wattsonworks.github.io/labuffet/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://wattsonworks.github.io/labuffet/" />
 
-    /* ---------- grain ---------- */
-    .grain{
-      position:fixed; inset:-50%; width:200%; height:200%;
-      pointer-events:none; z-index:120; opacity:.05;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
-      animation:grain 7s steps(8) infinite;
-    }
-    @keyframes grain{
-      0%,100%{ transform:translate(0,0) } 12%{ transform:translate(-2%,1%) }
-      25%{ transform:translate(1%,-2%) } 37%{ transform:translate(-1%,2%) }
-      50%{ transform:translate(2%,1%) } 62%{ transform:translate(-2%,-1%) }
-      75%{ transform:translate(1%,2%) } 87%{ transform:translate(-1%,-2%) }
-    }
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:locale" content="he_IL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="לה בופה · ארוחת הבוקר של The Way Inn, צפת" />
+  <meta property="og:description" content="ארוחת בוקר ים-תיכונית, לחמים שנאפו בבית ושולחן סלטים שופע — לאורחי The Way Inn, בלב רובע האמנים בצפת. מדי בוקר 08:00–10:30." />
+  <meta property="og:url" content="https://wattsonworks.github.io/labuffet/" />
+  <meta property="og:image" content="https://wattsonworks.github.io/labuffet/img/mezze-overhead-1280.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="2275" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    /* ---------- preloader ---------- */
-    .preloader{
-      position:fixed; inset:0; z-index:200; background:var(--bg);
-      display:flex; align-items:center; justify-content:center;
-    }
-    .preloader__inner{ text-align:center; }
-    .preloader__name{
-      font-family:var(--font-display); font-weight:800;
-      font-size:clamp(13px,1.6vw,18px); letter-spacing:.34em; text-transform:uppercase;
-    }
-    .preloader__count{
-      font-family:var(--font-display); font-weight:800;
-      font-size:clamp(72px,16vw,200px); line-height:1; color:var(--acid);
-      font-variant-numeric:tabular-nums;
-    }
-    .preloader__bar{
-      width:min(280px,60vw); height:1px; background:var(--line);
-      margin:28px auto 0; position:relative; overflow:hidden;
-    }
-    .preloader__bar i{
-      position:absolute; inset:0; background:var(--acid);
-      transform:scaleX(0); transform-origin:left;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap" />
 
-    /* ---------- cursor ---------- */
-    .cursor-dot,.cursor-ring{
-      position:fixed; top:0; left:0; pointer-events:none; z-index:150;
-      border-radius:50%; transform:translate(-50%,-50%);
-      display:none;
-    }
-    .cursor-dot{ width:6px; height:6px; background:var(--acid); }
-    .cursor-ring{
-      width:36px; height:36px; border:1px solid rgba(214,245,77,.5);
-      transition:width .3s ease, height .3s ease, background-color .3s ease;
-      margin-left:-15px; margin-top:-15px;
-    }
-    .cursor-ring.is-hover{ width:64px; height:64px; background:rgba(214,245,77,.08); margin-left:-29px; margin-top:-29px; }
-    @media (pointer:fine){
-      .cursor-dot,.cursor-ring{ display:block; }
-    }
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    /* ---------- nav ---------- */
-    .nav{
-      position:fixed; top:0; left:0; right:0; z-index:100;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:22px var(--pad);
-      mix-blend-mode:difference;
-    }
-    .nav__logo{
-      font-family:var(--font-display); font-weight:800; font-size:18px;
-      letter-spacing:.06em;
-    }
-    .nav__logo sup{ color:var(--acid); font-size:10px; }
-    .nav__links{ display:flex; gap:36px; align-items:center; }
-    .nav__links a{
-      font-size:12px; letter-spacing:.18em; text-transform:uppercase;
-      position:relative; padding:4px 0;
-    }
-    .nav__links a::after{
-      content:''; position:absolute; left:0; bottom:0; width:100%; height:1px;
-      background:currentColor; transform:scaleX(0); transform-origin:right;
-      transition:transform .4s cubic-bezier(.77,0,.18,1);
-    }
-    .nav__links a:hover::after{ transform:scaleX(1); transform-origin:left; }
-    .nav__burger{ display:none; z-index:102; width:44px; height:44px; position:relative; }
-    .nav__burger span{
-      position:absolute; left:8px; right:8px; height:2px; background:var(--ink);
-      transition:transform .4s cubic-bezier(.77,0,.18,1), top .4s, opacity .3s;
-    }
-    .nav__burger span:nth-child(1){ top:16px; }
-    .nav__burger span:nth-child(2){ top:26px; }
-    body.menu-open .nav__burger span:nth-child(1){ top:21px; transform:rotate(45deg); }
-    body.menu-open .nav__burger span:nth-child(2){ top:21px; transform:rotate(-45deg); }
-    @media (max-width:760px){
-      .nav__links{ display:none; }
-      .nav__burger{ display:block; }
-    }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "@id": "https://wattsonworks.github.io/labuffet/#labuffet",
+    "name": "La Buffet · לה בופה",
+    "alternateName": "ארוחת הבוקר של The Way Inn",
+    "description": "ארוחת בוקר ים-תיכונית במלון The Way Inn בצפת — לחמים שנאפו בבית, שולחן סלטים, גבינות מקומיות, מוגשת לאורחי המלון.",
+    "url": "https://wattsonworks.github.io/labuffet/",
+    "image": "https://wattsonworks.github.io/labuffet/img/mezze-overhead-1280.jpg",
+    "servesCuisine": ["Mediterranean", "Israeli", "Vegetarian"],
+    "priceRange": "$$",
+    "telephone": "+972-73-7750045",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "סמטת י\"ז 23",
+      "addressLocality": "צפת",
+      "addressRegion": "מחוז הצפון",
+      "postalCode": "13231",
+      "addressCountry": "IL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 32.965528,
+      "longitude": 35.494152
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=32.965528%2C35.494152",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "10:30"
+    }],
+    "sameAs": [
+      "https://thewayinn.co.il/",
+      "https://www.instagram.com/thewayinn1/",
+      "https://www.facebook.com/WayInnIsrael"
+    ],
+    "isPartOf": {
+      "@type": "LodgingBusiness",
+      "name": "The Way Inn",
+      "url": "https://thewayinn.co.il/"
+    },
+    "parentOrganization": { "@id": "https://wattsonworks.github.io/labuffet/#avi-mor" }
+  }
+  </script>
 
-    /* mobile menu overlay */
-    .menu{
-      position:fixed; inset:0; z-index:99; background:var(--bg-2);
-      display:flex; flex-direction:column; justify-content:center;
-      padding:0 var(--pad); gap:8px;
-      clip-path:inset(0 0 100% 0);
-      visibility:hidden;
-    }
-    .menu a{
-      font-family:var(--font-display); font-weight:800;
-      font-size:clamp(40px,11vw,72px); line-height:1.1; text-transform:uppercase;
-      display:flex; align-items:baseline; gap:14px;
-    }
-    .menu a em{ font-style:normal; font-family:var(--font-body); font-weight:300; font-size:13px; color:var(--acid); }
-    .menu__foot{ position:absolute; bottom:32px; left:var(--pad); right:var(--pad);
-      display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://wattsonworks.github.io/labuffet/#website",
+    "url": "https://wattsonworks.github.io/labuffet/",
+    "name": "La Buffet · לה בופה",
+    "alternateName": "ארוחת הבוקר של The Way Inn",
+    "inLanguage": ["he", "en"],
+    "publisher": { "@id": "https://wattsonworks.github.io/labuffet/#avi-mor" }
+  }
+  </script>
 
-    /* ---------- hero ---------- */
-    .hero{
-      position:relative; min-height:100svh; display:flex; flex-direction:column;
-      justify-content:flex-end; padding:0 var(--pad) 5svh; overflow:hidden;
-    }
-    .hero__canvas{ position:absolute; inset:0; z-index:0; }
-    .hero__canvas canvas{ display:block; width:100%; height:100%; }
-    .hero__veil{
-      position:absolute; inset:0; z-index:1; pointer-events:none;
-      background:radial-gradient(120% 90% at 50% 110%, rgba(10,10,12,0) 30%, rgba(10,10,12,.7) 100%);
-    }
-    .hero__content{ position:relative; z-index:2; }
-    .hero__eyebrow{
-      display:flex; gap:18px; align-items:center; margin-bottom:3vh;
-    }
-    .hero__eyebrow .dot{
-      width:8px; height:8px; border-radius:50%; background:var(--acid);
-      box-shadow:0 0 12px var(--acid); animation:pulse 2.4s ease-in-out infinite;
-    }
-    @keyframes pulse{ 50%{ opacity:.35 } }
-    .hero__title{
-      font-family:var(--font-display); font-weight:800; text-transform:uppercase;
-      font-size:clamp(44px,14.5vw,230px); line-height:.92; letter-spacing:-.01em;
-    }
-    .hero__title .line{ display:block; overflow:hidden; }
-    .hero__title .line > span{ display:inline-block; will-change:transform; }
-    .hero__title .alt{
-      -webkit-text-stroke:1.5px var(--ink); color:transparent;
-    }
-    .hero__title .reg{ font-size:.32em; vertical-align:top; line-height:1; padding-top:.18em; }
-    .hero__meta{
-      display:flex; justify-content:space-between; align-items:flex-end;
-      margin-top:4vh; gap:24px; flex-wrap:wrap;
-    }
-    .hero__role{ max-width:340px; font-size:15px; color:var(--ink-dim); }
-    .hero__role strong{ color:var(--ink); font-weight:400; }
-    .hero__scroll{
-      display:flex; align-items:center; gap:12px; font-size:11px;
-      letter-spacing:.22em; text-transform:uppercase; color:var(--ink-dim);
-    }
-    .hero__scroll i{
-      display:block; width:1px; height:44px; background:var(--ink-faint);
-      position:relative; overflow:hidden;
-    }
-    .hero__scroll i::after{
-      content:''; position:absolute; left:0; top:-50%; width:100%; height:50%;
-      background:var(--acid); animation:scrolldrop 1.8s cubic-bezier(.77,0,.18,1) infinite;
-    }
-    @keyframes scrolldrop{ to{ top:110% } }
-
-    /* ---------- marquee ---------- */
-    .marquee{
-      border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-      overflow:hidden; padding:18px 0; background:var(--bg);
-      position:relative; z-index:3;
-    }
-    .marquee__track{ display:flex; width:max-content; animation:marquee 28s linear infinite; }
-    .marquee span{
-      font-family:var(--font-display); font-weight:700; text-transform:uppercase;
-      font-size:clamp(18px,2.6vw,30px); white-space:nowrap; padding-right:18px;
-    }
-    .marquee span b{ color:var(--acid); font-weight:700; padding-right:18px; }
-    @keyframes marquee{ to{ transform:translateX(-50%) } }
-
-    /* ---------- sections ---------- */
-    section{ position:relative; }
-    .sect-head{
-      display:flex; align-items:baseline; gap:18px;
-      padding:0 var(--pad); margin-bottom:clamp(36px,6vh,72px);
-    }
-    .sect-head .idx{ color:var(--acid); font-size:13px; letter-spacing:.1em; }
-
-    /* manifesto */
-    .manifesto{ padding:clamp(100px,18vh,220px) 0 0; }
-    .manifesto__text{
-      padding:0 var(--pad); max-width:1100px;
-      font-family:var(--font-display); font-weight:700;
-      font-size:clamp(26px,4.6vw,64px); line-height:1.18; letter-spacing:-.01em;
-    }
-    .manifesto__text .w{ display:inline-block; opacity:.12; will-change:opacity; }
-    .manifesto__text .hl{ color:var(--acid); }
-    .manifesto__stats{
-      display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-      background:var(--line); border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-      margin-top:clamp(60px,10vh,120px);
-    }
-    .manifesto__stats > div{ background:var(--bg); padding:clamp(24px,3vw,44px) var(--pad); }
-    .manifesto__stats b{
-      display:block; font-family:var(--font-display); font-weight:800;
-      font-size:clamp(34px,5vw,72px); line-height:1; color:var(--ink);
-    }
-    .manifesto__stats b i{ color:var(--acid); font-style:normal; }
-    .manifesto__stats small{ display:block; margin-top:10px; }
-    @media (max-width:600px){
-      .manifesto__stats{ grid-template-columns:1fr; }
-    }
-
-    /* ---------- work ---------- */
-    .work{ padding:clamp(80px,14vh,180px) 0 0; }
-    .work__list{ display:flex; flex-direction:column; gap:6vh; padding:0 var(--pad); }
-    .card{
-      position:sticky; top:9vh;
-      background:var(--bg-2); border:1px solid var(--line); border-radius:20px;
-      overflow:hidden; display:grid; grid-template-columns:1fr 1.2fr;
-      min-height:74vh;
-    }
-    .card__shade{
-      position:absolute; inset:0; background:#0a0a0c; opacity:0;
-      pointer-events:none; z-index:5; border-radius:inherit;
-    }
-    .card__info{
-      padding:clamp(24px,3.4vw,56px); display:flex; flex-direction:column;
-      justify-content:flex-start; gap:clamp(24px,4vh,48px);
-    }
-    .card__top{ display:flex; justify-content:space-between; align-items:baseline; }
-    .card__num{ font-family:var(--font-display); font-weight:800; font-size:15px; color:var(--acid); }
-    .card__title{
-      font-family:var(--font-display); font-weight:800; text-transform:uppercase;
-      font-size:clamp(40px,5.8vw,92px); line-height:.95; letter-spacing:-.01em;
-    }
-    .card__desc{ color:var(--ink-dim); max-width:380px; font-size:15px; margin-top:14px; }
-    .card__tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:18px; }
-    .card__tags span{
-      font-size:11px; letter-spacing:.14em; text-transform:uppercase;
-      border:1px solid var(--line); border-radius:99px; padding:7px 14px; color:var(--ink-dim);
-    }
-    .card__visual{
-      position:relative; overflow:hidden; min-height:320px;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .card__bg{ position:absolute; inset:-12%; }
-    .card--aura  .card__bg{ background:radial-gradient(80% 90% at 70% 20%, #7c5cff 0%, #2d1d7a 45%, #0c0a18 100%); }
-    .card--tide  .card__bg{ background:radial-gradient(80% 90% at 30% 30%, #19c6d4 0%, #0c4f6e 50%, #060d14 100%); }
-    .card--pulse .card__bg{ background:radial-gradient(80% 90% at 70% 70%, #ff5c47 0%, #7a1d33 50%, #140608 100%); }
-    .card--nova  .card__bg{ background:radial-gradient(80% 90% at 35% 25%, #d6f54d 0%, #3c5210 48%, #0a0d04 100%); }
-    .card__ghost{
-      position:absolute; font-family:var(--font-display); font-weight:800;
-      font-size:clamp(160px,26vw,420px); line-height:1; color:rgba(255,255,255,.06);
-      user-select:none; pointer-events:none;
-    }
-    .card__screen{
-      position:relative; width:min(62%,330px); aspect-ratio:9/16.5; max-height:78%;
-      background:rgba(10,10,14,.82); border:1px solid rgba(255,255,255,.16);
-      border-radius:26px;
-      padding:18px; display:flex; flex-direction:column; gap:12px;
-      box-shadow:0 24px 48px rgba(0,0,0,.4);
-    }
-    .card__screen .pill{ height:10px; border-radius:6px; background:rgba(255,255,255,.14); }
-    .card__screen .pill.s{ width:42%; } .card__screen .pill.m{ width:68%; }
-    .card__screen .block{
-      flex:1; border-radius:14px;
-      background:linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.04));
-      position:relative; overflow:hidden;
-    }
-    .card__screen .block::after{
-      content:''; position:absolute; width:58%; height:58%; border-radius:50%;
-      right:-16%; bottom:-16%; background:rgba(214,245,77,.25); filter:blur(8px);
-    }
-    .card__screen .row{ display:flex; gap:10px; }
-    .card__screen .chip{ flex:1; height:42px; border-radius:11px; background:rgba(255,255,255,.1); }
-    .card__screen .chip.go{ background:var(--acid); }
-    @media (max-width:900px){
-      .card{ grid-template-columns:1fr; min-height:auto; top:11vh; }
-      .card__visual{ order:-1; min-height:300px; }
-      .card__screen{ width:min(56%,250px); margin:34px 0; }
-      .card__desc{ max-width:none; }
-    }
-
-    /* ---------- capabilities ---------- */
-    .caps{ padding:clamp(110px,18vh,220px) 0 0; }
-    .caps__list{ border-top:1px solid var(--line); }
-    .cap{
-      display:grid; grid-template-columns:80px 1fr auto; align-items:center; gap:24px;
-      padding:clamp(26px,4vh,44px) var(--pad);
-      border-bottom:1px solid var(--line); position:relative; overflow:hidden;
-    }
-    .cap::before{
-      content:''; position:absolute; inset:0; background:var(--acid);
-      transform:scaleY(0); transform-origin:bottom;
-      transition:transform .45s cubic-bezier(.77,0,.18,1);
-    }
-    .cap:hover::before{ transform:scaleY(1); transform-origin:top; }
-    .cap > *{ position:relative; transition:color .35s; }
-    .cap:hover > *{ color:#0a0a0c; }
-    .cap__num{ font-size:13px; color:var(--ink-dim); letter-spacing:.1em; }
-    .cap__name{
-      font-family:var(--font-display); font-weight:800; text-transform:uppercase;
-      font-size:clamp(26px,4.4vw,58px); line-height:1.05;
-    }
-    .cap__note{ font-size:13px; color:var(--ink-dim); max-width:220px; text-align:right; }
-    @media (max-width:760px){
-      .cap{ grid-template-columns:48px 1fr; }
-      .cap__note{ display:none; }
-    }
-
-    /* ---------- recognition ---------- */
-    .awards{ padding:clamp(90px,14vh,180px) var(--pad) 0; }
-    .awards .sect-head{ padding:0; }
-    .awards__grid{
-      display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
-      border:1px solid var(--line);
-    }
-    .awards__grid > div{
-      background:var(--bg); padding:clamp(22px,3vw,40px);
-      display:flex; flex-direction:column; gap:14px; min-height:140px; justify-content:space-between;
-    }
-    .awards__grid b{ font-family:var(--font-display); font-weight:700; font-size:clamp(16px,1.6vw,21px); }
-    .awards__grid span{ color:var(--acid); font-size:13px; }
-    @media (max-width:760px){ .awards__grid{ grid-template-columns:1fr 1fr; } }
-
-    /* ---------- contact ---------- */
-    .contact{
-      padding:clamp(110px,20vh,240px) var(--pad) 0; text-align:center; overflow:hidden;
-    }
-    .contact > .u-label{ display:block; margin-bottom:4vh; }
-    .contact__big{
-      display:inline-block; font-family:var(--font-display); font-weight:800;
-      text-transform:uppercase; line-height:.95; letter-spacing:-.01em;
-      font-size:clamp(44px,9.6vw,150px);
-      -webkit-text-stroke:1.5px var(--ink); color:transparent;
-      transition:color .5s cubic-bezier(.77,0,.18,1), -webkit-text-stroke-color .5s;
-    }
-    .contact__big:hover{ color:var(--acid); -webkit-text-stroke-color:var(--acid); }
-    .contact__mail{
-      display:inline-block; margin-top:5vh; font-size:clamp(16px,2.2vw,24px);
-      border-bottom:1px solid var(--ink-faint); padding-bottom:6px;
-    }
-    .footer{
-      margin-top:clamp(90px,14vh,160px); border-top:1px solid var(--line);
-      padding:26px var(--pad) max(26px, env(safe-area-inset-bottom));
-      display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
-      font-size:12px; color:var(--ink-dim); letter-spacing:.06em;
-    }
-    .footer__socials{ display:flex; gap:22px; }
-    .footer__socials a:hover{ color:var(--acid); }
-    .footer .note{ font-size:11px; color:var(--ink-faint); }
-
-    @media (prefers-reduced-motion:reduce){
-      .grain, .marquee__track, .hero__scroll i::after, .hero__eyebrow .dot{ animation:none !important; }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://wattsonworks.github.io/labuffet/#avi-mor",
+    "name": "Avi Mor",
+    "alternateName": "אבי מור",
+    "legalName": "Avi Mor",
+    "taxID": "303092126",
+    "vatID": "303092126",
+    "identifier": [{
+      "@type": "PropertyValue",
+      "propertyID": "Israeli Osek Murshe (עוסק מורשה)",
+      "value": "303092126"
+    }],
+    "address": { "@type": "PostalAddress", "addressCountry": "IL" }
+  }
+  </script>
 </head>
 <body>
+  <a class="skip" href="#main">דלג לתוכן</a>
 
-  <!-- preloader -->
-  <div class="preloader" id="preloader">
-    <div class="preloader__inner">
-      <div class="preloader__name">Elia Voss — Portfolio ©2026</div>
-      <div class="preloader__count"><span id="count">0</span></div>
-      <div class="preloader__bar"><i id="bar"></i></div>
+  <header class="site-header" data-header>
+    <div class="wrap header-row">
+      <a class="brand" href="#top" aria-label="לה בופה — דף הבית">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <use href="#mandala" />
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">לה בופה</span>
+          <span class="brand-sub">ארוחת הבוקר של The Way Inn</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="ניווט ראשי">
+        <a href="#breakfast">הבוקר</a>
+        <a href="#table">השולחן</a>
+        <a href="#gallery">גלריה</a>
+        <a href="#setting">המקום</a>
+        <a href="#reserve">להזמין</a>
+      </nav>
+      <div class="lang">
+        <a href="en/" hreflang="en" lang="en" aria-label="English">EN</a>
+      </div>
     </div>
-  </div>
-
-  <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
-
-  <!-- nav -->
-  <header class="nav">
-    <a class="nav__logo" href="#top" data-scroll>VOSS<sup>®</sup></a>
-    <nav class="nav__links">
-      <a href="#work" data-scroll data-hover>Work</a>
-      <a href="#about" data-scroll data-hover>About</a>
-      <a href="#capabilities" data-scroll data-hover>Capabilities</a>
-      <a href="#contact" data-scroll data-hover>Let's talk</a>
-    </nav>
-    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
   </header>
 
-  <!-- mobile menu -->
-  <div class="menu" id="menu" aria-hidden="true">
-    <a href="#work" data-scroll>Work <em>(04)</em></a>
-    <a href="#about" data-scroll>About</a>
-    <a href="#capabilities" data-scroll>Capabilities</a>
-    <a href="#contact" data-scroll>Contact</a>
-    <div class="menu__foot">
-      <span class="u-label">Tel Aviv — <span data-clock>00:00</span></span>
-      <span class="u-label">hello@eliavoss.studio</span>
-    </div>
-  </div>
+  <main id="main">
 
-  <main id="top">
-    <!-- hero -->
-    <section class="hero" id="hero">
-      <div class="hero__canvas"><canvas id="webgl"></canvas></div>
-      <div class="hero__veil"></div>
-      <div class="hero__content">
-        <div class="hero__eyebrow">
-          <span class="dot"></span>
-          <span class="u-label">Available for select projects — 2026</span>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <picture class="hero-media">
+        <source srcset="img/mezze-overhead-1280.webp 1280w, img/mezze-overhead-800.webp 800w" sizes="100vw" type="image/webp" />
+        <img src="img/mezze-overhead-1280.jpg" alt="מבט-על על שולחן הסלטים השופע של לה בופה, עם מפיות The Way Inn" fetchpriority="high" />
+      </picture>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <video class="hero-video" data-hero-video poster="img/hero-loop-poster.jpg" muted playsinline loop preload="none" aria-hidden="true">
+        <source data-src="img/hero-loop.webm" type="video/webm" />
+        <source data-src="img/hero-loop.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-content wrap">
+        <div class="eyebrow">
+          <svg class="eyebrow-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mandala-mini" /></svg>
+          <span>ארוחת הבוקר של The Way Inn · צפת</span>
         </div>
-        <h1 class="hero__title" id="heroTitle">
-          <span class="line"><span>Elia</span></span>
-          <span class="line"><span class="alt">Voss®</span></span>
+        <h1 class="hero-title">
+          <span class="hero-title-he">לה&nbsp;בופה</span>
+          <span class="hero-title-en">La&nbsp;Buffet</span>
         </h1>
-        <div class="hero__meta">
-          <p class="hero__role"><strong>UX/UI designer & creative developer</strong> building digital products, brands and interactive experiences that feel inevitable.</p>
-          <div class="hero__scroll"><span>Scroll to explore</span><i></i></div>
+        <p class="hero-hook">לחם חם שיצא מהתנור, שולחן סלטים ים-תיכוני שופע, אור גליל דרך חלון קמרון — מדי בוקר, בבית אבן בן 250 שנה ברובע האמנים.</p>
+        <div class="hero-meta">
+          <span class="hero-hours"><strong>08:00 – 10:30</strong> <span>מדי בוקר</span></span>
+          <span class="hero-dot" aria-hidden="true">·</span>
+          <span>לאורחי המלון</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#reserve">להזמין דרך הקבלה</a>
+          <a class="btn btn-ghost" href="https://wa.me/972526881116?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%A0%D7%A8%D7%A6%D7%94%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F%20%D7%90%D7%A8%D7%95%D7%97%D7%AA%20%D7%91%D7%95%D7%A7%D7%A8%20%D7%91%D7%9C%D7%94%20%D7%91%D7%95%D7%A4%D7%94%20%D7%9C%D7%AA%D7%90%D7%A8%D7%99%D7%9A%20%5B___%5D%20%D7%A2%D7%91%D7%95%D7%A8%20%5B___%5D%20%D7%A1%D7%95%D7%A2%D7%93%D7%99%D7%9D.%20%D7%AA%D7%95%D7%93%D7%94%21" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
+      <a class="hero-scroll" href="#breakfast" aria-label="גלילה למטה">
+        <span></span>
+      </a>
     </section>
 
-    <!-- marquee -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Interfaces <b>·</b> Motion <b>·</b> Design Systems <b>·</b> WebGL <b>·</b> Prototyping <b>·</b> Art Direction <b>·</b> </span>
-        <span>Interfaces <b>·</b> Motion <b>·</b> Design Systems <b>·</b> WebGL <b>·</b> Prototyping <b>·</b> Art Direction <b>·</b> </span>
-      </div>
-    </div>
+    <!-- ============ BREAKFAST ============ -->
+    <section class="section section-warm" id="breakfast">
+      <div class="wrap split">
+        <div class="split-text">
+          <p class="eyebrow eyebrow-dark"><span>הבוקר</span></p>
+          <h2>בוקר שמתחיל בלחם חם, ומסתיים בכוס קפה בחצר.</h2>
+          <p class="lede">לה בופה היא ארוחת הבוקר של The Way Inn — שולחן פתוח, נדיב וביתי, שמוגש לאורחי המלון בחדר האבן הגדול ובחצר הסלולה. לחמים שנאפו אצלנו באותו בוקר, סלטים ים-תיכוניים, ממרחים, גבינות מקומיות, ביצים, פירות העונה, וקפה בנחת.</p>
 
-    <!-- manifesto -->
-    <section class="manifesto" id="about">
-      <div class="sect-head"><span class="idx">(01)</span><span class="u-label">Manifesto</span></div>
-      <p class="manifesto__text" id="manifesto">
-        I believe great design is invisible until it moves you. For eight years I've helped startups and studios turn <span class="hl">complex problems</span> into interfaces people <span class="hl">love to touch</span> — pixel by pixel, frame by frame.
-      </p>
-      <div class="manifesto__stats">
-        <div><b data-counter="8">0</b><small class="u-label">Years of practice</small></div>
-        <div><b><span data-counter="40">0</span><i>+</i></b><small class="u-label">Products shipped</small></div>
-        <div><b data-counter="12">0</b><small class="u-label">Industry awards</small></div>
-      </div>
-    </section>
-
-    <!-- work -->
-    <section class="work" id="work">
-      <div class="sect-head"><span class="idx">(02)</span><span class="u-label">Selected work — 2022→2026</span></div>
-      <div class="work__list" id="workList">
-
-        <article class="card card--aura">
-          <div class="card__info">
-            <div class="card__top"><span class="card__num">01</span><span class="u-label">2026</span></div>
-            <div>
-              <h3 class="card__title">Aura</h3>
-              <p class="card__desc">A calm-by-design fintech app. Rebuilt the onboarding journey and design system; activation up 38%.</p>
-              <div class="card__tags"><span>Product design</span><span>Design system</span><span>iOS</span></div>
+          <div class="howcards">
+            <div class="howcard">
+              <div class="howcard-num">1</div>
+              <h3>להזמין מראש</h3>
+              <p>פונים לקבלה של The Way Inn <strong>לפחות יום מראש</strong>, מסכמים תאריך ומספר סועדים, ובבוקר השולחן מחכה לכם.</p>
+            </div>
+            <div class="howcard">
+              <div class="howcard-num">2</div>
+              <h3>או להצטרף לבופה החי</h3>
+              <p>בבקרים שהבופה פתוח לכל אורחי המלון — פשוט מתיישבים. <em>(שאלו בקבלה אילו ימים פתוחים השבוע.)</em></p>
             </div>
           </div>
-          <div class="card__visual">
-            <div class="card__bg"></div>
-            <span class="card__ghost">A</span>
-            <div class="card__screen"><span class="pill m"></span><span class="pill s"></span><div class="block"></div><div class="row"><span class="chip"></span><span class="chip go"></span></div></div>
-          </div>
-          <div class="card__shade"></div>
-        </article>
 
-        <article class="card card--tide">
-          <div class="card__info">
-            <div class="card__top"><span class="card__num">02</span><span class="u-label">2025</span></div>
-            <div>
-              <h3 class="card__title">Tide</h3>
-              <p class="card__desc">Editorial travel platform with story-driven booking. WebGL transitions between destinations, zero loading screens.</p>
-              <div class="card__tags"><span>UX/UI</span><span>WebGL</span><span>Art direction</span></div>
-            </div>
-          </div>
-          <div class="card__visual">
-            <div class="card__bg"></div>
-            <span class="card__ghost">T</span>
-            <div class="card__screen"><span class="pill s"></span><span class="pill m"></span><div class="block"></div><div class="row"><span class="chip go"></span><span class="chip"></span></div></div>
-          </div>
-          <div class="card__shade"></div>
-        </article>
-
-        <article class="card card--pulse">
-          <div class="card__info">
-            <div class="card__top"><span class="card__num">03</span><span class="u-label">2024</span></div>
-            <div>
-              <h3 class="card__title">Pulse</h3>
-              <p class="card__desc">Wearable health OS — glanceable vitals, haptic-first interactions, motion language for 40+ micro-states.</p>
-              <div class="card__tags"><span>Interaction</span><span>Motion</span><span>watchOS</span></div>
-            </div>
-          </div>
-          <div class="card__visual">
-            <div class="card__bg"></div>
-            <span class="card__ghost">P</span>
-            <div class="card__screen"><span class="pill m"></span><span class="pill s"></span><div class="block"></div><div class="row"><span class="chip"></span><span class="chip go"></span></div></div>
-          </div>
-          <div class="card__shade"></div>
-        </article>
-
-        <article class="card card--nova">
-          <div class="card__info">
-            <div class="card__top"><span class="card__num">04</span><span class="u-label">2023</span></div>
-            <div>
-              <h3 class="card__title">Nova</h3>
-              <p class="card__desc">Collaborative design tool for motion designers. Node-based timeline, realtime multiplayer, loved by 30k creators.</p>
-              <div class="card__tags"><span>Product design</span><span>Web app</span><span>Branding</span></div>
-            </div>
-          </div>
-          <div class="card__visual">
-            <div class="card__bg"></div>
-            <span class="card__ghost">N</span>
-            <div class="card__screen"><span class="pill s"></span><span class="pill m"></span><div class="block"></div><div class="row"><span class="chip go"></span><span class="chip"></span></div></div>
-          </div>
-          <div class="card__shade"></div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- capabilities -->
-    <section class="caps" id="capabilities">
-      <div class="sect-head"><span class="idx">(03)</span><span class="u-label">Capabilities</span></div>
-      <div class="caps__list">
-        <div class="cap" data-hover>
-          <span class="cap__num">01</span>
-          <h3 class="cap__name">Product Design</h3>
-          <p class="cap__note">Research, flows, UI — from first sketch to shipped feature.</p>
+          <p class="muted-note">השעות: <strong>08:00–10:30</strong> · הימים המדויקים, מחיר לסועד וכשרות — <a href="#reserve">לבירור בקבלה</a>.</p>
         </div>
-        <div class="cap" data-hover>
-          <span class="cap__num">02</span>
-          <h3 class="cap__name">Design Systems</h3>
-          <p class="cap__note">Tokens, components and docs that scale with your team.</p>
-        </div>
-        <div class="cap" data-hover>
-          <span class="cap__num">03</span>
-          <h3 class="cap__name">Motion & Interaction</h3>
-          <p class="cap__note">Micro-interactions and motion language that guide, not decorate.</p>
-        </div>
-        <div class="cap" data-hover>
-          <span class="cap__num">04</span>
-          <h3 class="cap__name">Creative Development</h3>
-          <p class="cap__note">GSAP, Three.js and shaders — design that ships as code.</p>
+        <div class="split-media">
+          <picture>
+            <source srcset="img/bread-salad-juice-525.webp" type="image/webp" />
+            <img loading="lazy" src="img/bread-salad-juice-525.jpg" alt="לחם חם, סלט ים-תיכוני וכוס מיץ תפוזים על שולחן הבוקר" />
+          </picture>
+          <picture class="split-media-tall">
+            <source srcset="img/homemade-bread-800.webp" type="image/webp" />
+            <img loading="lazy" src="img/homemade-bread-800.jpg" alt="לחמים ביתיים על מגש נייר אפייה, יצאו מהתנור" />
+          </picture>
         </div>
       </div>
     </section>
 
-    <!-- recognition -->
-    <section class="awards">
-      <div class="sect-head"><span class="idx">(04)</span><span class="u-label">Recognition</span></div>
-      <div class="awards__grid">
-        <div><b>Awwwards</b><span>Site of the Day ×3</span></div>
-        <div><b>FWA</b><span>FWA of the Day ×2</span></div>
-        <div><b>CSS Design Awards</b><span>Website of the Year nominee</span></div>
-        <div><b>The Webby Awards</b><span>Honoree — Best UX</span></div>
+    <!-- ============ WHAT'S ON THE TABLE ============ -->
+    <section class="section section-stone" id="table">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark center"><span>מה יש על השולחן</span></p>
+        <h2 class="center">קטגוריות — לא לרשימת קניות, לחגיגה.</h2>
+        <p class="lede center maxw">כל בוקר השולחן מתחלף בקצב של מה שגדל ונאפה היום. הנה למה אפשר לצפות. <em>(המנות והשמות המדויקים — לאישור עם המלון.)</em></p>
+
+        <ul class="categories">
+          <li>
+            <picture><source srcset="img/homemade-bread-800.webp" type="image/webp"/><img loading="lazy" src="img/homemade-bread-800.jpg" alt="לחמים ביתיים"/></picture>
+            <h3>לחמים שנאפו בבית</h3>
+            <p>חלות קטנות, לחם זיתים, פוקצ'ה עם זעתר — חמים מהתנור.</p>
+          </li>
+          <li>
+            <picture><source srcset="img/mezze-overhead-800.webp" type="image/webp"/><img loading="lazy" src="img/mezze-overhead-800.jpg" alt="שולחן סלטים מבט-על"/></picture>
+            <h3>סלטים וממרחים</h3>
+            <p>סלט ישראלי, סלק, מטבוחה, חציל, חומוס, טחינה — הכול מוכן אצלנו.</p>
+          </li>
+          <li>
+            <picture><source srcset="img/buffet-spread-800.webp" type="image/webp"/><img loading="lazy" src="img/buffet-spread-800.jpg" alt="גבינות, לבנה, חמוצים, ריבות"/></picture>
+            <h3>גבינות, לבנה וחמוצים</h3>
+            <p>פטה, גבינות גליליות, לבנה קטיפתית, זיתים, ריבות בית.</p>
+          </li>
+          <li>
+            <picture><source srcset="img/table-for-four-800.webp" type="image/webp"/><img loading="lazy" src="img/table-for-four-800.jpg" alt="שולחן בוקר עם שקשוקה"/></picture>
+            <h3>ביצים ומנות חמות</h3>
+            <p>שקשוקה, ביצים לבחירה, מנה חמה של היום.</p>
+          </li>
+          <li>
+            <picture><source srcset="img/eggplant-tahini-800.webp" type="image/webp"/><img loading="lazy" src="img/eggplant-tahini-800.jpg" alt="חציל בטחינה עם כוסברה ופפריקה"/></picture>
+            <h3>מנות שף קטנות</h3>
+            <p>חציל מעושן בטחינה, ירקות צלויים — נגיעות מהמטבח של The Way Inn.</p>
+          </li>
+          <li>
+            <picture><source srcset="img/specialty-loaf-800.webp" type="image/webp"/><img loading="lazy" src="img/specialty-loaf-800.jpg" alt="עוגת בוקר עם אגוזים ושוקולד"/></picture>
+            <h3>פירות, מאפים וקפה</h3>
+            <p>פירות עונה, מאפי בוקר, קפה איטלקי ושלל תה.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- contact -->
-    <section class="contact" id="contact">
-      <span class="u-label">Have an idea worth building?</span>
-      <a class="contact__big" href="mailto:hello@eliavoss.studio" data-hover>Let's Talk</a>
-      <br>
-      <a class="contact__mail" href="mailto:hello@eliavoss.studio" data-hover>hello@eliavoss.studio</a>
-      <footer class="footer">
-        <span>© 2026 Elia Voss — Tel Aviv, <span data-clock>00:00</span> local</span>
-        <div class="footer__socials">
-          <a href="#" data-hover>Dribbble</a><a href="#" data-hover>X</a><a href="#" data-hover>LinkedIn</a><a href="#" data-hover>Read.cv</a>
+    <!-- ============ GALLERY ============ -->
+    <section class="section section-warm" id="gallery">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark center"><span>גלריה</span></p>
+        <h2 class="center">מבט אל הבוקר.</h2>
+
+        <div class="gallery" data-gallery>
+          <a class="g-item g-tall" href="img/mezze-overhead-1280.jpg" data-cap="שולחן סלטים — מבט על.">
+            <picture><source srcset="img/mezze-overhead-800.webp" type="image/webp"/><img loading="lazy" src="img/mezze-overhead-800.jpg" alt="שולחן סלטים — מבט על"/></picture>
+          </a>
+          <a class="g-item g-wide" href="img/homemade-bread-1280.jpg" data-cap="לחמים ביתיים, יצאו מהתנור.">
+            <picture><source srcset="img/homemade-bread-800.webp" type="image/webp"/><img loading="lazy" src="img/homemade-bread-800.jpg" alt="לחמים ביתיים"/></picture>
+          </a>
+          <a class="g-item" href="img/dining-buffet-tall-1280.jpg" data-cap="חדר האוכל וחלון הברזל הכחול של The Way Inn.">
+            <picture><source srcset="img/dining-buffet-tall-800.webp" type="image/webp"/><img loading="lazy" src="img/dining-buffet-tall-800.jpg" alt="חדר אוכל אבן עם שולחן בופה"/></picture>
+          </a>
+          <a class="g-item" href="img/bread-cut-1280.jpg" data-cap="לחם פרוס, פנים אווריריים.">
+            <picture><source srcset="img/bread-cut-800.webp" type="image/webp"/><img loading="lazy" src="img/bread-cut-800.jpg" alt="לחם פרוס"/></picture>
+          </a>
+          <a class="g-item g-tall" href="img/table-for-four-1280.jpg" data-cap="שולחן לארבעה — שקשוקה, סלטים, לחם.">
+            <picture><source srcset="img/table-for-four-800.webp" type="image/webp"/><img loading="lazy" src="img/table-for-four-800.jpg" alt="שולחן בוקר לארבעה"/></picture>
+          </a>
+          <a class="g-item" href="img/buffet-spread-1280.jpg" data-cap="גבינות, חמוצים וריבות על הבופה.">
+            <picture><source srcset="img/buffet-spread-800.webp" type="image/webp"/><img loading="lazy" src="img/buffet-spread-800.jpg" alt="גבינות, חמוצים וריבות"/></picture>
+          </a>
+          <a class="g-item" href="img/eggplant-tahini-1280.jpg" data-cap="חציל מעושן עם טחינה ופפריקה.">
+            <picture><source srcset="img/eggplant-tahini-800.webp" type="image/webp"/><img loading="lazy" src="img/eggplant-tahini-800.jpg" alt="חציל בטחינה"/></picture>
+          </a>
+          <a class="g-item" href="img/dining-windows-1280.jpg" data-cap="חלונות קמרון אל ההרים.">
+            <picture><source srcset="img/dining-windows-800.webp" type="image/webp"/><img loading="lazy" src="img/dining-windows-800.jpg" alt="חלונות קמרון בחדר האוכל"/></picture>
+          </a>
+          <a class="g-item g-wide" href="img/salatim-closeup-1280.jpg" data-cap="קלוז-אפ סלטים — סלק, לבנה, זיתים.">
+            <picture><source srcset="img/salatim-closeup-800.webp" type="image/webp"/><img loading="lazy" src="img/salatim-closeup-800.jpg" alt="סלטים — קלוז-אפ"/></picture>
+          </a>
+          <a class="g-item" href="img/mezze-window-800.jpg" data-cap="שולחן הסלטים מול שערי הברזל הכחולים.">
+            <picture><source srcset="img/mezze-window-800.webp" type="image/webp"/><img loading="lazy" src="img/mezze-window-800.jpg" alt="שולחן סלטים מול חלון"/></picture>
+          </a>
+          <a class="g-item" href="img/dough-spirals-1280.jpg" data-cap="בצק שנילוש בידיים — בדרך לתנור.">
+            <picture><source srcset="img/dough-spirals-800.webp" type="image/webp"/><img loading="lazy" src="img/dough-spirals-800.jpg" alt="בצק לפני אפייה"/></picture>
+          </a>
+          <a class="g-item" href="img/nut-loaf-1280.jpg" data-cap="עוגת אגוזים ושוקולד — של בית.">
+            <picture><source srcset="img/nut-loaf-800.webp" type="image/webp"/><img loading="lazy" src="img/nut-loaf-800.jpg" alt="עוגת אגוזים"/></picture>
+          </a>
+          <a class="g-item" href="img/mezze-side-1280.jpg" data-cap="המגוון מצד.">
+            <picture><source srcset="img/mezze-side-800.webp" type="image/webp"/><img loading="lazy" src="img/mezze-side-800.jpg" alt="שולחן סלטים מצד"/></picture>
+          </a>
+          <a class="g-item" href="img/mezze-marble-1280.jpg" data-cap="שיש ופורצלן.">
+            <picture><source srcset="img/mezze-marble-800.webp" type="image/webp"/><img loading="lazy" src="img/mezze-marble-800.jpg" alt="שולחן סלטים על שיש"/></picture>
+          </a>
+          <a class="g-item" href="img/mezze-yogurt-1280.jpg" data-cap="לבנה, זיתים, יוגורט בקערות.">
+            <picture><source srcset="img/mezze-yogurt-800.webp" type="image/webp"/><img loading="lazy" src="img/mezze-yogurt-800.jpg" alt="לבנה ויוגורט"/></picture>
+          </a>
+          <a class="g-item" href="img/dining-archway-1280.jpg" data-cap="קמרון אבן אל חדר האוכל.">
+            <picture><source srcset="img/dining-archway-800.webp" type="image/webp"/><img loading="lazy" src="img/dining-archway-800.jpg" alt="חדר האוכל דרך קמרון אבן"/></picture>
+          </a>
         </div>
-        <span class="note">Fictional portfolio concept — built with GSAP, Lenis & Three.js</span>
-      </footer>
+      </div>
     </section>
+
+    <!-- ============ THE SETTING ============ -->
+    <section class="section section-dark" id="setting">
+      <div class="wrap split split-reverse">
+        <div class="split-text">
+          <p class="eyebrow"><span>המקום</span></p>
+          <h2>בית אבן בן 250 שנה, בלב רובע האמנים.</h2>
+          <p class="lede">לה בופה היא ארוחת הבוקר של <a href="https://thewayinn.co.il/" target="_blank" rel="noopener">The Way Inn</a> — מלון בוטיק קטן בבית אבן עתיק, שיסדו השף רוני בראל ואשתו ג'נין. כעשר סוויטות סביב חצרות פתוחות, מרפסות גג לשקיעה, ספא חמאם טורקי, ורוח הצפת הישנה בכל מקום.</p>
+          <p>בבוקר, חדר האבן הגדול מתמלא באור גליל ובארומה של לחם חם. מפיות המלון רקומות במנדלת עץ-החיים — אותה מנדלה הקבועה בקיר החצר. זה לא חדר אוכל של מלון. זה הבית של בראל, נדיב כשמתארחים אצלו.</p>
+          <p class="quote">"לא לבקר בצפת — לגור בה."</p>
+          <a class="btn btn-outline" href="https://thewayinn.co.il/" target="_blank" rel="noopener">להזמין חדר ב-The Way Inn ↗</a>
+        </div>
+        <div class="split-media setting-media">
+          <picture>
+            <source srcset="img/courtyard-treeoflife-494.webp" type="image/webp"/>
+            <img loading="lazy" src="img/courtyard-treeoflife-494.jpg" alt="חצר The Way Inn בלילה עם לוח מנדלת עץ-החיים על קיר האבן" />
+          </picture>
+          <picture>
+            <source srcset="img/dining-chairs-536.webp" type="image/webp"/>
+            <img loading="lazy" src="img/dining-chairs-536.jpg" alt="חדר אוכל עם כיסאות צבעוניים ורצפת בלטות מודפסת" />
+          </picture>
+          <picture>
+            <source srcset="img/courtyard-flowers-800.webp" type="image/webp"/>
+            <img loading="lazy" src="img/courtyard-flowers-800.jpg" alt="שערי ברזל כחולים עם פרחים בחצר" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESERVE ============ -->
+    <section class="section section-warm" id="reserve">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark center"><span>להזמין</span></p>
+        <h2 class="center">פשוט מאוד.</h2>
+        <p class="lede center maxw">פונים לקבלה של The Way Inn — ב-WhatsApp, בטלפון, או באימייל. מזמינים <strong>לפחות יום מראש</strong>, ובבוקר השולחן מחכה לכם. <em>או, פשוט מצטרפים לבופה החי כשהוא רץ.</em></p>
+
+        <div class="cta-grid">
+          <a class="cta-card" href="https://wa.me/972526881116?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%A0%D7%A8%D7%A6%D7%94%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F%20%D7%90%D7%A8%D7%95%D7%97%D7%AA%20%D7%91%D7%95%D7%A7%D7%A8%20%D7%91%D7%9C%D7%94%20%D7%91%D7%95%D7%A4%D7%94%20%D7%9C%D7%AA%D7%90%D7%A8%D7%99%D7%9A%20%5B___%5D%20%D7%A2%D7%91%D7%95%D7%A8%20%5B___%5D%20%D7%A1%D7%95%D7%A2%D7%93%D7%99%D7%9D.%20%D7%AA%D7%95%D7%93%D7%94%21" target="_blank" rel="noopener">
+            <span class="cta-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="28" height="28"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.16 19.6L3 29l6.6-1.74A13 13 0 1 0 16 3Zm0 23.74a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-3.92 1.03 1.05-3.83-.25-.4A10.74 10.74 0 1 1 16 26.74Zm6-7.83c-.32-.16-1.92-.95-2.22-1.06s-.51-.16-.73.16-.84 1.06-1.03 1.28-.38.24-.7.08a8.8 8.8 0 0 1-2.6-1.6 9.7 9.7 0 0 1-1.8-2.24c-.19-.32 0-.5.14-.66.15-.15.32-.38.48-.57s.21-.32.32-.54.05-.4-.03-.57-.73-1.74-1-2.39-.53-.55-.73-.56h-.62a1.2 1.2 0 0 0-.87.4 3.62 3.62 0 0 0-1.14 2.7 6.27 6.27 0 0 0 1.33 3.36 14.4 14.4 0 0 0 5.55 4.9c.78.33 1.39.53 1.86.68a4.5 4.5 0 0 0 2.05.13 3.36 3.36 0 0 0 2.2-1.55 2.74 2.74 0 0 0 .19-1.55c-.08-.13-.29-.21-.61-.37Z"/></svg>
+            </span>
+            <span class="cta-body">
+              <span class="cta-label">WhatsApp</span>
+              <span class="cta-val">+972 52-688-1116</span>
+              <span class="cta-hint">הודעה דו-לשונית מוכנה</span>
+            </span>
+          </a>
+          <a class="cta-card" href="tel:+97273-7750045">
+            <span class="cta-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M20 17.5c-1.2 0-2.4-.2-3.6-.6-.4-.1-.8 0-1.1.2l-2.2 2.2a17.4 17.4 0 0 1-7.7-7.7l2.2-2.2c.3-.3.4-.7.2-1.1A12.6 12.6 0 0 1 7.2 4c0-.5-.5-1-1-1H2.5c-.5 0-1 .5-1 1 0 10 8.5 18.5 18.5 18.5.5 0 1-.5 1-1V18.5c0-.5-.5-1-1-1Z"/></svg>
+            </span>
+            <span class="cta-body">
+              <span class="cta-label">קבלה — טלפון</span>
+              <span class="cta-val">+972 73-7750045</span>
+              <span class="cta-hint">להזמנה יום מראש</span>
+            </span>
+          </a>
+          <a class="cta-card" href="mailto:info@thewayinn.co.il?subject=La%20Buffet%20%E2%80%94%20%D7%94%D7%96%D7%9E%D7%A0%D7%AA%20%D7%90%D7%A8%D7%95%D7%97%D7%AA%20%D7%91%D7%95%D7%A7%D7%A8&body=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%95%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F%20%D7%90%D7%AA%20%D7%9C%D7%94%20%D7%91%D7%95%D7%A4%D7%94%20%D7%9C%D7%AA%D7%90%D7%A8%D7%99%D7%9A%20%5B___%5D%20%D7%A2%D7%91%D7%95%D7%A8%20%5B___%5D%20%D7%A1%D7%95%D7%A2%D7%93%D7%99%D7%9D.">
+            <span class="cta-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.4l8 5.2 8-5.2V6H4Zm0 12h16V8.8l-7.4 4.8a1 1 0 0 1-1.2 0L4 8.8V18Z"/></svg>
+            </span>
+            <span class="cta-body">
+              <span class="cta-label">אימייל</span>
+              <span class="cta-val">info@thewayinn.co.il</span>
+              <span class="cta-hint">בקבלה של The Way Inn</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="info-grid">
+          <div>
+            <h3>שעות</h3>
+            <p><strong>08:00 – 10:30</strong><br/><span class="muted">הימים המדויקים — לאישור בקבלה</span></p>
+          </div>
+          <div>
+            <h3>כתובת</h3>
+            <p>סמטת י"ז 23, צפת<br/><span class="muted">בתוך The Way Inn, רובע האמנים</span></p>
+          </div>
+          <div>
+            <h3>למי</h3>
+            <p>לאורחי המלון<br/><span class="muted">פתוח לסועדים מבחוץ? לבירור בקבלה</span></p>
+          </div>
+          <div>
+            <h3>כשרות / מחיר</h3>
+            <p>פרטים — <a href="#reserve">בקבלה</a><br/><span class="muted">חלביים, צמחוני · לאישור</span></p>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            title="מפת The Way Inn בצפת"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=35.4907%2C32.9637%2C35.4977%2C32.9673&amp;layer=mapnik&amp;marker=32.965528%2C35.494152"
+            allowfullscreen></iframe>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=32.965528%2C35.494152" target="_blank" rel="noopener">פתח ב-Google Maps ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <svg class="brand-mark brand-mark-lg" viewBox="0 0 64 64" aria-hidden="true"><use href="#mandala"/></svg>
+          <p class="footer-name">לה בופה · La Buffet</p>
+          <p class="muted">ארוחת הבוקר של <a href="https://thewayinn.co.il/" target="_blank" rel="noopener">The Way Inn</a>, צפת.</p>
+        </div>
+        <div>
+          <h4>שעות</h4>
+          <p>08:00 – 10:30<br/><span class="muted">מדי בוקר · ימים לאישור</span></p>
+        </div>
+        <div>
+          <h4>צור קשר</h4>
+          <p>
+            <a href="tel:+97273-7750045">+972 73-7750045</a><br/>
+            <a href="https://wa.me/972526881116" target="_blank" rel="noopener">WhatsApp +972 52-688-1116</a><br/>
+            <a href="mailto:info@thewayinn.co.il">info@thewayinn.co.il</a>
+          </p>
+        </div>
+        <div>
+          <h4>The Way Inn</h4>
+          <p>
+            <a href="https://thewayinn.co.il/" target="_blank" rel="noopener">thewayinn.co.il ↗</a><br/>
+            <a href="https://www.instagram.com/thewayinn1/" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://www.facebook.com/WayInnIsrael" target="_blank" rel="noopener">Facebook</a>
+          </p>
+        </div>
+      </div>
+      <div class="wrap copyright">
+        <p>© <span data-year>2026</span> La Buffet · The Way Inn, צפת · <a href="en/">English</a></p>
+        <p class="legal" style="margin-top:.4rem;font-size:.78rem;opacity:.65">אבי מור · עוסק מורשה · 303092126</p>
+      </div>
+    </footer>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script>
-  (function(){
-    'use strict';
-    gsap.registerPlugin(ScrollTrigger);
+  <!-- Sticky mobile CTAs -->
+  <div class="sticky-cta" aria-label="פעולות מהירות">
+    <a class="sticky-btn sticky-primary" href="#reserve">להזמין</a>
+    <a class="sticky-btn sticky-wa" href="https://wa.me/972526881116" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 32 32" width="22" height="22"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.16 19.6L3 29l6.6-1.74A13 13 0 1 0 16 3Zm0 23.74a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-3.92 1.03 1.05-3.83-.25-.4A10.74 10.74 0 1 1 16 26.74Zm6-7.83c-.32-.16-1.92-.95-2.22-1.06s-.51-.16-.73.16-.84 1.06-1.03 1.28-.38.24-.7.08a8.8 8.8 0 0 1-2.6-1.6 9.7 9.7 0 0 1-1.8-2.24c-.19-.32 0-.5.14-.66.15-.15.32-.38.48-.57s.21-.32.32-.54.05-.4-.03-.57-.73-1.74-1-2.39-.53-.55-.73-.56h-.62a1.2 1.2 0 0 0-.87.4 3.62 3.62 0 0 0-1.14 2.7 6.27 6.27 0 0 0 1.33 3.36 14.4 14.4 0 0 0 5.55 4.9c.78.33 1.39.53 1.86.68a4.5 4.5 0 0 0 2.05.13 3.36 3.36 0 0 0 2.2-1.55 2.74 2.74 0 0 0 .19-1.55c-.08-.13-.29-.21-.61-.37Z"/></svg>
+    </a>
+    <a class="sticky-btn sticky-tel" href="tel:+97273-7750045" aria-label="התקשרו לקבלה">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M20 17.5c-1.2 0-2.4-.2-3.6-.6-.4-.1-.8 0-1.1.2l-2.2 2.2a17.4 17.4 0 0 1-7.7-7.7l2.2-2.2c.3-.3.4-.7.2-1.1A12.6 12.6 0 0 1 7.2 4c0-.5-.5-1-1-1H2.5c-.5 0-1 .5-1 1 0 10 8.5 18.5 18.5 18.5.5 0 1-.5 1-1V18.5c0-.5-.5-1-1-1Z"/></svg>
+    </a>
+  </div>
 
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var finePointer  = window.matchMedia('(pointer: fine)').matches;
-    var isMobile     = window.matchMedia('(max-width: 760px)').matches;
+  <!-- Lightbox -->
+  <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="גלריה">
+    <button class="lb-close" data-lb-close aria-label="סגירה">×</button>
+    <button class="lb-prev" data-lb-prev aria-label="הקודם">‹</button>
+    <button class="lb-next" data-lb-next aria-label="הבא">›</button>
+    <figure>
+      <img data-lb-img alt="" />
+      <figcaption data-lb-cap></figcaption>
+    </figure>
+  </div>
 
-    /* ---------- smooth scroll (Lenis) ---------- */
-    var lenis = null;
-    if (!reduceMotion && typeof Lenis !== 'undefined') {
-      lenis = new Lenis({ duration: 1.15, smoothWheel: true });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    }
-    function scrollToTarget(target){
-      if (lenis) lenis.scrollTo(target, { offset: 0, duration: 1.4 });
-      else {
-        var el = document.querySelector(target);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-    document.querySelectorAll('[data-scroll]').forEach(function(a){
-      a.addEventListener('click', function(e){
-        var href = a.getAttribute('href');
-        if (href && href.charAt(0) === '#') {
-          e.preventDefault();
-          closeMenu();
-          scrollToTarget(href);
-        }
-      });
-    });
+  <!-- SVG sprite: Tree-of-Life inspired mandala marks -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="mandala" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <circle cx="32" cy="32" r="28"/>
+          <circle cx="32" cy="32" r="20"/>
+          <circle cx="32" cy="32" r="12"/>
+          <circle cx="32" cy="32" r="4"/>
+          <g>
+            <line x1="32" y1="4"  x2="32" y2="60"/>
+            <line x1="4"  y1="32" x2="60" y2="32"/>
+            <line x1="12" y1="12" x2="52" y2="52"/>
+            <line x1="52" y1="12" x2="12" y2="52"/>
+          </g>
+          <g>
+            <circle cx="32" cy="12" r="3"/>
+            <circle cx="32" cy="52" r="3"/>
+            <circle cx="12" cy="32" r="3"/>
+            <circle cx="52" cy="32" r="3"/>
+            <circle cx="18" cy="18" r="2.4"/>
+            <circle cx="46" cy="18" r="2.4"/>
+            <circle cx="18" cy="46" r="2.4"/>
+            <circle cx="46" cy="46" r="2.4"/>
+          </g>
+        </g>
+      </symbol>
+      <symbol id="mandala-mini" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="32" cy="32" r="22"/>
+          <circle cx="32" cy="32" r="10"/>
+          <line x1="32" y1="6"  x2="32" y2="58"/>
+          <line x1="6"  y1="32" x2="58" y2="32"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
 
-    /* ---------- clock (Tel Aviv) ---------- */
-    function tick(){
-      var t = new Intl.DateTimeFormat('en-GB', { hour:'2-digit', minute:'2-digit', timeZone:'Asia/Jerusalem' }).format(new Date());
-      document.querySelectorAll('[data-clock]').forEach(function(el){ el.textContent = t; });
-    }
-    tick(); setInterval(tick, 30000);
-
-    /* ---------- custom cursor ---------- */
-    if (finePointer && !reduceMotion) {
-      var dot  = document.querySelector('.cursor-dot');
-      var ring = document.querySelector('.cursor-ring');
-      var dx = gsap.quickTo(dot,  'x', { duration: .08, ease: 'power2' }),
-          dy = gsap.quickTo(dot,  'y', { duration: .08, ease: 'power2' }),
-          rx = gsap.quickTo(ring, 'x', { duration: .35, ease: 'power3' }),
-          ry = gsap.quickTo(ring, 'y', { duration: .35, ease: 'power3' });
-      window.addEventListener('mousemove', function(e){
-        dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);
-      });
-      document.querySelectorAll('a, button, [data-hover]').forEach(function(el){
-        el.addEventListener('mouseenter', function(){ ring.classList.add('is-hover'); });
-        el.addEventListener('mouseleave', function(){ ring.classList.remove('is-hover'); });
-      });
-    }
-
-    /* ---------- mobile menu ---------- */
-    var burger = document.getElementById('burger');
-    var menu = document.getElementById('menu');
-    var menuOpen = false;
-    var menuLinks = menu.querySelectorAll('a');
-    function openMenu(){
-      menuOpen = true;
-      document.body.classList.add('menu-open');
-      burger.setAttribute('aria-expanded', 'true');
-      menu.setAttribute('aria-hidden', 'false');
-      gsap.set(menu, { visibility: 'visible' });
-      gsap.to(menu, { clipPath: 'inset(0% 0px 0% 0px)', duration: .7, ease: 'power4.inOut' });
-      gsap.fromTo(menuLinks, { yPercent: 60, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: .6, stagger: .06, delay: .25, ease: 'power3.out' });
-      if (lenis) lenis.stop();
-    }
-    function closeMenu(){
-      if (!menuOpen) return;
-      menuOpen = false;
-      document.body.classList.remove('menu-open');
-      burger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      gsap.to(menu, { clipPath: 'inset(0% 0px 100% 0px)', duration: .6, ease: 'power4.inOut',
-        onComplete: function(){ gsap.set(menu, { visibility: 'hidden' }); } });
-      if (lenis) lenis.start();
-    }
-    burger.addEventListener('click', function(){ menuOpen ? closeMenu() : openMenu(); });
-
-    /* ---------- THREE.js particle wave ---------- */
-    var heroVisible = true;
-    try {
-      var canvas = document.getElementById('webgl');
-      var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: true, powerPreference: 'high-performance' });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      var scene = new THREE.Scene();
-      var camera = new THREE.PerspectiveCamera(60, 1, .1, 60);
-      camera.position.set(0, 1.6, 3.4);
-      camera.lookAt(0, 0, 0);
-
-      var GRID = isMobile ? 90 : 150, SPREAD = 11;
-      var count = GRID * GRID;
-      var positions = new Float32Array(count * 3);
-      var seeds = new Float32Array(count);
-      var k = 0;
-      for (var iy = 0; iy < GRID; iy++) {
-        for (var ix = 0; ix < GRID; ix++) {
-          positions[k * 3]     = (ix / (GRID - 1) - .5) * SPREAD;
-          positions[k * 3 + 1] = 0;
-          positions[k * 3 + 2] = (iy / (GRID - 1) - .5) * SPREAD;
-          seeds[k] = Math.random();
-          k++;
-        }
-      }
-      var geo = new THREE.BufferGeometry();
-      geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      geo.setAttribute('aSeed', new THREE.BufferAttribute(seeds, 1));
-
-      var mat = new THREE.ShaderMaterial({
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-        uniforms: {
-          uTime:   { value: 0 },
-          uSize:   { value: (isMobile ? 26 : 34) * Math.min(window.devicePixelRatio, 2) },
-          uColorA: { value: new THREE.Color('#7c5cff') },
-          uColorB: { value: new THREE.Color('#d6f54d') }
-        },
-        vertexShader: [
-          'uniform float uTime;',
-          'uniform float uSize;',
-          'attribute float aSeed;',
-          'varying float vElev;',
-          'varying float vSeed;',
-          'void main(){',
-          '  vec3 p = position;',
-          '  float d = length(p.xz) * 0.55;',
-          '  p.y += sin(p.x * 0.9 + uTime * 0.6) * 0.32;',
-          '  p.y += cos(p.z * 1.1 + uTime * 0.45) * 0.28;',
-          '  p.y += sin(d * 2.2 - uTime * 0.8) * 0.22;',
-          '  vElev = p.y;',
-          '  vSeed = aSeed;',
-          '  vec4 mv = modelViewMatrix * vec4(p, 1.0);',
-          '  gl_Position = projectionMatrix * mv;',
-          '  gl_PointSize = uSize * (0.5 + vElev * 0.5 + aSeed * 0.3) * (1.0 / -mv.z);',
-          '}'
-        ].join('\n'),
-        fragmentShader: [
-          'uniform vec3 uColorA;',
-          'uniform vec3 uColorB;',
-          'varying float vElev;',
-          'varying float vSeed;',
-          'void main(){',
-          '  float dist = length(gl_PointCoord - 0.5);',
-          '  float alpha = smoothstep(0.5, 0.05, dist);',
-          '  vec3 col = mix(uColorA, uColorB, smoothstep(-0.6, 0.8, vElev));',
-          '  gl_FragColor = vec4(col, alpha * (0.35 + vSeed * 0.45));',
-          '}'
-        ].join('\n')
-      });
-      scene.add(new THREE.Points(geo, mat));
-
-      var mouse = { x: 0, y: 0 }, cam = { x: 0, y: 1.6 };
-      if (finePointer) {
-        window.addEventListener('mousemove', function(e){
-          mouse.x = (e.clientX / window.innerWidth - .5) * 2;
-          mouse.y = (e.clientY / window.innerHeight - .5) * 2;
-        });
-      }
-      function sizeRenderer(){
-        var hero = document.getElementById('hero');
-        var w = hero.clientWidth, h = hero.clientHeight;
-        renderer.setSize(w, h, false);
-        camera.aspect = w / h;
-        camera.updateProjectionMatrix();
-      }
-      sizeRenderer();
-      window.addEventListener('resize', sizeRenderer);
-
-      var clock = new THREE.Clock();
-      gsap.ticker.add(function(){
-        if (!heroVisible || document.hidden) return;
-        if (!reduceMotion) mat.uniforms.uTime.value = clock.getElapsedTime();
-        cam.x += (mouse.x * .5 - cam.x) * .04;
-        cam.y += (1.6 - mouse.y * .25 - cam.y) * .04;
-        camera.position.x = cam.x;
-        camera.position.y = cam.y;
-        camera.lookAt(0, 0, 0);
-        renderer.render(scene, camera);
-      });
-      new IntersectionObserver(function(entries){
-        heroVisible = entries[0].isIntersecting;
-      }, { threshold: 0 }).observe(document.getElementById('hero'));
-    } catch (err) {
-      console.warn('WebGL disabled:', err);
-    }
-
-    /* ---------- text splitting ---------- */
-    var heroChars = [];
-    document.querySelectorAll('#heroTitle .line > span').forEach(function(span){
-      var text = span.textContent;
-      span.textContent = '';
-      text.split('').forEach(function(ch){
-        var c = document.createElement('span');
-        c.style.display = 'inline-block';
-        if (ch === '®') c.className = 'reg';
-        c.textContent = ch;
-        span.appendChild(c);
-        heroChars.push(c);
-      });
-    });
-
-    var manifesto = document.getElementById('manifesto');
-    (function splitWords(el){
-      var nodes = Array.prototype.slice.call(el.childNodes);
-      nodes.forEach(function(node){
-        if (node.nodeType === 3) {
-          var frag = document.createDocumentFragment();
-          node.textContent.split(/(\s+)/).forEach(function(part){
-            if (!part) return;
-            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
-            var w = document.createElement('span');
-            w.className = 'w';
-            w.textContent = part;
-            frag.appendChild(w);
-          });
-          el.replaceChild(frag, node);
-        } else if (node.nodeType === 1) {
-          node.classList.add('w');
-        }
-      });
-    })(manifesto);
-
-    /* ---------- preloader + intro ---------- */
-    var pre = document.getElementById('preloader');
-    var countEl = document.getElementById('count');
-    var barEl = document.getElementById('bar');
-    var introPlayed = false;
-
-    gsap.set(heroChars, { yPercent: 115 });
-    gsap.set('.hero__eyebrow, .hero__meta', { opacity: 0, y: 24 });
-    gsap.set('.nav', { opacity: 0 });
-
-    function playIntro(){
-      if (introPlayed) return;
-      introPlayed = true;
-      var tl = gsap.timeline({ defaults: { ease: 'power4.inOut' } });
-      tl.to(pre, { yPercent: -100, duration: .9 })
-        .set(pre, { display: 'none' })
-        .to(heroChars, { yPercent: 0, duration: 1.1, stagger: .035, ease: 'power4.out' }, '-=.45')
-        .to('.hero__eyebrow, .hero__meta', { opacity: 1, y: 0, duration: .8, stagger: .12, ease: 'power3.out' }, '-=.7')
-        .to('.nav', { opacity: 1, duration: .6, ease: 'power2.out' }, '-=.5');
-    }
-
-    if (reduceMotion) {
-      pre.style.display = 'none';
-      gsap.set(heroChars, { yPercent: 0 });
-      gsap.set('.hero__eyebrow, .hero__meta, .nav', { opacity: 1, y: 0 });
-      introPlayed = true;
-    } else {
-      var progress = { v: 0 };
-      gsap.to(progress, {
-        v: 100, duration: 2, ease: 'power2.inOut',
-        onUpdate: function(){
-          var v = Math.round(progress.v);
-          countEl.textContent = v;
-          barEl.style.transform = 'scaleX(' + (v / 100) + ')';
-        },
-        onComplete: playIntro
-      });
-      setTimeout(playIntro, 4500); /* safety net */
-      /* hard fallback: if rAF is throttled (hidden tab), clear without animation */
-      setTimeout(function(){
-        if (getComputedStyle(pre).display !== 'none') {
-          pre.style.display = 'none';
-          gsap.set(heroChars, { yPercent: 0 });
-          gsap.set('.hero__eyebrow, .hero__meta, .nav', { opacity: 1, y: 0 });
-          introPlayed = true;
-        }
-      }, 7000);
-    }
-
-    /* ---------- scroll animations ---------- */
-    if (!reduceMotion) {
-      /* hero parallax-out */
-      gsap.to('.hero__content', {
-        yPercent: -18, opacity: .25, ease: 'none',
-        scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
-      });
-      gsap.to('.hero__canvas', {
-        opacity: 0, ease: 'none',
-        scrollTrigger: { trigger: '#hero', start: '40% top', end: 'bottom top', scrub: true }
-      });
-
-      /* manifesto word scrub */
-      gsap.to('#manifesto .w', {
-        opacity: 1, stagger: .06, ease: 'none',
-        scrollTrigger: { trigger: '#manifesto', start: 'top 78%', end: 'bottom 45%', scrub: .4 }
-      });
-
-      /* stat counters */
-      document.querySelectorAll('[data-counter]').forEach(function(el){
-        var target = parseInt(el.getAttribute('data-counter'), 10);
-        var obj = { v: 0 };
-        ScrollTrigger.create({
-          trigger: el, start: 'top 88%', once: true,
-          onEnter: function(){
-            gsap.to(obj, { v: target, duration: 1.6, ease: 'power3.out',
-              onUpdate: function(){ el.textContent = Math.round(obj.v); } });
-          }
-        });
-      });
-
-      /* card stack: previous card recedes as next covers it */
-      var cards = gsap.utils.toArray('.card');
-      cards.forEach(function(card, i){
-        var bg = card.querySelector('.card__bg');
-        gsap.fromTo(bg, { yPercent: -8 }, {
-          yPercent: 8, ease: 'none',
-          scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true }
-        });
-        var screen = card.querySelector('.card__screen');
-        gsap.fromTo(screen, { y: 50, rotate: -2 }, {
-          y: -50, rotate: 2, ease: 'none',
-          scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true }
-        });
-        if (i > 0) {
-          var prev = cards[i - 1];
-          gsap.to(prev, {
-            scale: .94, ease: 'none',
-            scrollTrigger: { trigger: card, start: 'top bottom', end: 'top 9%', scrub: true }
-          });
-          gsap.to(prev.querySelector('.card__shade'), {
-            opacity: .55, ease: 'none',
-            scrollTrigger: { trigger: card, start: 'top bottom', end: 'top 9%', scrub: true }
-          });
-        }
-      });
-
-      /* section reveals */
-      gsap.utils.toArray('.sect-head, .caps .cap, .awards__grid > div, .contact > .u-label, .contact__big, .contact__mail').forEach(function(el){
-        gsap.from(el, {
-          y: 40, opacity: 0, duration: .9, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 92%', once: true }
-        });
-      });
-    } else {
-      gsap.set('#manifesto .w', { opacity: 1 });
-      document.querySelectorAll('[data-counter]').forEach(function(el){
-        el.textContent = el.getAttribute('data-counter');
-      });
-    }
-  })();
-  </script>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
